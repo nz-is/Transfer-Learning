@@ -21,7 +21,7 @@ params = {"C":[0.1, 1.0, 10.0, 100.0, 1000.0, 10000.0]}
 model = GridSearchCV(LogisticRegression(), params, cv=10, n_jobs=args.jobs)
 model.fit(db["features"][:i], db["labels"][:i])
 
-print("[INFO] best hyperparamters {}".format(model.best_params))
+print("[INFO] best hyperparamters {}".format(model.best_params_))
 
 print("[INFO] evaluating..")
 preds = model.predict(db["features"][i:])
